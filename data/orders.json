@@ -1,0 +1,49 @@
+[
+  {
+    "id": "UHoY5qKU4wwPcXD1V4Sel",
+    "userId": "fydlS_WM4nsdvfDPqdCuX",
+    "items": [
+      {
+        "productId": "p1",
+        "qty": 1
+      },
+      {
+        "productId": "p7",
+        "qty": 1
+      },
+      {
+        "productId": "p4",
+        "qty": 1
+      }
+    ],
+    "total": 493,
+    "address": null,
+    "createdAt": "2025-09-23T05:34:31.372Z"
+  },
+  {
+    "id": "db0f154e-e25e-421c-8486-fa4e6cc58cfb",
+    "userId": "2f14b854-e385-4ccc-b45c-f6f0da1bf38d",
+    "items": [
+      {
+        "productId": "9f231c1e-73cb-4bac-8607-a53984932dc9",
+        "qty": 6
+      }
+    ],
+    "total": 543,
+    "address": null,
+    "createdAt": "2025-10-03T09:04:48.893Z"
+  },
+  {
+    "id": "49cc6e74-10dc-44c6-bc69-22164fedb994",
+    "userId": "fydlS_WM4nsdvfDPqdCuX",
+    "items": [
+      {
+        "productId": "82056932-16b3-425d-b00f-3c8c2e20bc9a",
+        "qty": 2
+      }
+    ],
+    "total": 63,
+    "address": null,
+    "createdAt": "2025-10-03T09:14:16.603Z"
+  }
+]

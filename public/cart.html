@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHOP.CO - Cart</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container flex between center">
+      <a class="logo" href="/E-commerce-website-main/e-commerce website/public/index.html">SHOP.CO</a>
+      <nav class="nav">
+        <a href="/E-commerce-website-main/e-commerce website/public/products.html">Shop</a>
+        <a href="/E-commerce-website-main/e-commerce website/public/cart.html" class="active">Cart (<span id="nav-cart-count">0</span>)</a>
+      </nav>
+      <div id="nav-auth" class="auth"></div>
+    </div>
+  </header>
+
+  <main class="container grid cols-7-5 gap-lg">
+    <section>
+      <h2>Your Cart</h2>
+      <div id="cart-list" class="cart-list"></div>
+    </section>
+    <aside>
+      <h3>Order Summary</h3>
+      <div class="summary">
+        <div class="row"><span>Subtotal</span><strong id="sum-subtotal">$0</strong></div>
+        <div class="row"><span>Discount (-20%)</span><strong class="danger" id="sum-discount">-$0</strong></div>
+        <div class="row"><span>Delivery Fee</span><strong id="sum-delivery">$15</strong></div>
+        <hr />
+        <div class="row total"><span>Total</span><strong id="sum-total">$0</strong></div>
+        <button id="btn-checkout" class="btn block">Go to Checkout</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Shop.co © 2023-2025</p>
+    </div>
+  </footer>
+
+  <script src="/js/state.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/ui.js"></script>
+  <script>
+    AppUI.mountAuth('#nav-auth');
+    AppUI.mountCartCount('#nav-cart-count');
+
+    function recalc() {
+      const { subtotal, discount, delivery, total } = Cart.computeTotals();
+      document.getElementById('sum-subtotal').textContent = `$${subtotal}`;
+      document.getElementById('sum-discount').textContent = `-$${discount}`;
+      document.getElementById('sum-delivery').textContent = `$${delivery}`;
+      document.getElementById('sum-total').textContent = `$${total}`;
+    }
+
+    function render() {
+      AppUI.renderCart('#cart-list', {
+        onIncrease: (id) => { Cart.add(id, 1); AppUI.mountCartCount('#nav-cart-count'); render(); },
+        onDecrease: (id) => { Cart.add(id, -1); AppUI.mountCartCount('#nav-cart-count'); render(); },
+        onRemove: (id) => { Cart.remove(id); AppUI.mountCartCount('#nav-cart-count'); render(); }
+      });
+      recalc();
+    }
+
+    document.getElementById('btn-checkout').addEventListener('click', async () => {
+      const user = Auth.currentUser();
+      if (!user) {
+        alert('Please login to place order.');
+        return Auth.openAuthModal();
+      }
+      try {
+        const order = await API.createOrder(Cart.items(), Cart.computeTotals().total);
+        Cart.clear();
+        AppUI.mountCartCount('#nav-cart-count');
+        alert(`Order placed! Order ID: ${order.order.id}`);
+        window.location.href = '/E-commerce-website-main/e-commerce website/public/products.html';
+      } catch (e) {
+        alert(e.message || 'Checkout failed');
+      }
+    });
+
+    render();
+  </script>
+  
+</body>
+</html>
+
+

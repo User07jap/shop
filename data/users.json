@@ -1,0 +1,81 @@
+[
+  {
+    "id": "fydlS_WM4nsdvfDPqdCuX",
+    "name": "admin",
+    "email": "admin@gmail.com",
+    "passwordHash": "$2a$10$/1K/y8mPWcI40bA7GdN/HO6X69/hHd8mmHXsNE19iJt89K7VGvEr.",
+    "createdAt": "2025-09-23T05:33:27.922Z"
+  },
+  {
+    "id": "l1LDhA_ZLvPa56EwezV89",
+    "name": "Test Seller",
+    "email": "testseller@example.com",
+    "passwordHash": "$2a$10$dn3DWYEj/wRrgJtsrkBT7eIIviQWIV9ZzqvyzG5lT1THjOEkyFcVq",
+    "role": "seller",
+    "createdAt": "2025-09-23T07:40:44.256Z"
+  },
+  {
+    "id": "lwsXlUfpWIU2qZC1zgDxT",
+    "name": "japhet",
+    "email": "japhet@gmail.com",
+    "passwordHash": "$2a$10$epD74NXjWnQaJ.eExJMOqOMO.wgj.r5JKSWmprzWOClQaYPSEB0wi",
+    "role": "seller",
+    "createdAt": "2025-09-24T23:28:37.908Z"
+  },
+  {
+    "id": "Me4vY1idAr_lg4c2KicI_",
+    "name": "Admin User",
+    "email": "admin@shopco.com",
+    "passwordHash": "$2a$10$b84y6dCZ.1Rng6JTjqkkYeFS8LKI1mWcMan8WS7KhWv2Q6B2C9OCy",
+    "role": "admin",
+    "createdAt": "2025-09-24T23:39:39.127Z"
+  },
+  {
+    "id": "fgb06r-DCFFOHVuA4qxFL",
+    "name": "admin1@gmail.com",
+    "email": "admin@shop.com",
+    "passwordHash": "$2a$10$wkLrY4tqXiLULNwqlqMOVOYoBvcvmke42/Ay.pJ2vSlRVyJkC/Kyu",
+    "role": "customer",
+    "createdAt": "2025-10-03T07:59:35.098Z"
+  },
+  {
+    "id": "bd7e999e-7a9d-4c29-aa35-48c94e29e503",
+    "name": "japhet",
+    "email": "seller1@gmail.com",
+    "passwordHash": "$2a$10$.eQ7xGr5fc7rThvSPywmaemFdGgrOfuh6FuL8Q/Vs14nvC8oCfvIm",
+    "role": "seller",
+    "createdAt": "2025-10-03T08:43:03.177Z"
+  },
+  {
+    "id": "4e853877-9353-410c-bae1-50595ec38acf",
+    "name": "jan",
+    "email": "adminseller@gmail.com",
+    "passwordHash": "$2a$10$BoByh.WXknzuLgK1bwCmHOX7OK/l8aHUXL0tAlyJw6kq04fGVuemq",
+    "role": "seller",
+    "createdAt": "2025-10-03T08:47:31.376Z"
+  },
+  {
+    "id": "ac283559-4b2f-492b-8aa1-5dde17793840",
+    "name": "janj",
+    "email": "adminall@gmail.com",
+    "passwordHash": "$2a$10$9XOLivsGmdKAcjFB5OjN9unTPapo/KvZ8PFS.ksRS8XHBdq/vbp7y",
+    "role": "admin",
+    "createdAt": "2025-10-03T08:50:28.293Z"
+  },
+  {
+    "id": "2f14b854-e385-4ccc-b45c-f6f0da1bf38d",
+    "name": "jan",
+    "email": "user@gmail.com",
+    "passwordHash": "$2a$10$FLPS5ar7qUCmpT8I7yoPDONOI.uI5sVQNgmMRsjdBMplDcoYUKIHi",
+    "role": "customer",
+    "createdAt": "2025-10-03T09:04:19.132Z"
+  },
+  {
+    "id": "16336815-d70e-4f8a-abf3-ef468e98f65f",
+    "name": "jan",
+    "email": "seller@gmail.com",
+    "passwordHash": "$2a$10$wP2ZWbGm76QRTQdEvNZKcO1ML01q3e83Qa8s88Rx1978RqQRasRTm",
+    "role": "seller",
+    "createdAt": "2025-10-03T09:10:06.682Z"
+  }
+]

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHOP.CO - Products</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container flex between center">
+      <a class="logo" href="/E-commerce-website-main/e-commerce website/public/index.html">SHOP.CO</a>
+      <nav class="nav">
+        <a href="/E-commerce-website-main/e-commerce website/public/products.html" class="active">Shop</a>
+        <a href="/E-commerce-website-main/e-commerce website/public/seller/index.html">Seller</a>
+        <a href="/E-commerce-website-main/e-commerce website/public/cart.html">Cart (<span id="nav-cart-count">0</span>)</a>
+      </nav>
+      <div id="nav-auth" class="auth"></div>
+    </div>
+  </header>
+
+  <main class="container grid cols-4-8 gap-lg">
+    <aside>
+      <h3>Filters</h3>
+      <div class="filter">
+        <label>Search</label>
+        <input id="f-q" type="text" placeholder="Search products..." />
+      </div>
+      <div class="filter">
+        <label>Category</label>
+        <select id="f-category"></select>
+      </div>
+      <div class="filter">
+        <label>Style</label>
+        <select id="f-style"></select>
+      </div>
+      <div class="filter rows">
+        <label>Price</label>
+        <div class="flex gap-sm center">
+          <input id="f-price-min" type="number" min="0" value="0" />
+          <span>-</span>
+          <input id="f-price-max" type="number" min="0" value="300" />
+        </div>
+      </div>
+      <div class="filter">
+        <label>Sort</label>
+        <select id="f-sort">
+          <option value="">Most Popular</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating-desc">Rating</option>
+        </select>
+      </div>
+      <button id="f-apply" class="btn block">Apply Filter</button>
+    </aside>
+
+    <section>
+      <h2>Catalog</h2>
+      <div id="grid" class="grid products"></div>
+      <div id="pagination" class="pagination"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Shop.co © 2023-2025</p>
+    </div>
+  </footer>
+
+  <script src="/js/state.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/ui.js"></script>
+  <script>
+    AppUI.mountAuth('#nav-auth');
+    AppUI.mountCartCount('#nav-cart-count');
+
+    const filters = {
+      page: 1, pageSize: 9, q: '', category: '', style: '', priceMin: 0, priceMax: 300, sort: ''
+    };
+
+    function syncFromUI() {
+      filters.q = document.getElementById('f-q').value.trim();
+      filters.category = document.getElementById('f-category').value;
+      filters.style = document.getElementById('f-style').value;
+      filters.priceMin = Number(document.getElementById('f-price-min').value || 0);
+      filters.priceMax = Number(document.getElementById('f-price-max').value || 100000);
+      filters.sort = document.getElementById('f-sort').value;
+      filters.page = 1;
+      load();
+    }
+
+    async function load() {
+      const res = await API.getProducts(filters);
+      AppUI.renderProductGrid('#grid', res.items);
+      AppUI.renderPagination('#pagination', res.page, Math.ceil(res.total / filters.pageSize), (page) => {
+        filters.page = page; load();
+      });
+    }
+
+    (async () => {
+      const meta = await API.getCategories();
+      AppUI.populateSelect('#f-category', ['', ...meta.categories]);
+      AppUI.populateSelect('#f-style', ['', ...meta.styles]);
+      document.getElementById('f-apply').addEventListener('click', syncFromUI);
+      load();
+    })();
+  </script>
+  
+</body>
+</html>
+
+

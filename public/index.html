@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHOP.CO - Home</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container flex between center">
+      <a class="logo" href="/E-commerce-website-main/e-commerce website/public/index.html">SHOP.CO</a>
+      <nav class="nav">
+        <a href="/E-commerce-website-main/e-commerce website/public/products.html">Shop</a>
+        <a href="/E-commerce-website-main/e-commerce website/public/seller/index.html">Seller</a>
+        <a href="/E-commerce-website-main/e-commerce website/public/cart.html">Cart (<span id="nav-cart-count">0</span>)</a>
+      </nav>
+      <div id="nav-auth" class="auth"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Find clothes that matches your style</h1>
+      <p>Browse meticulously crafted garments designed to bring out your individuality.</p>
+      <a class="btn" href="/E-commerce-website-main/e-commerce website/public/products.html">Shop Now</a>
+    </section>
+
+    <section>
+      <h2>New Arrivals</h2>
+      <div id="new-arrivals" class="grid products"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Shop.co © 2023-2025</p>
+    </div>
+  </footer>
+
+  <script src="/js/state.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/ui.js"></script>
+  <script>
+    AppUI.mountAuth('#nav-auth');
+    AppUI.mountCartCount('#nav-cart-count');
+    (async () => {
+      const res = await API.getProducts({ pageSize: 8, sort: 'rating-desc' });
+      AppUI.renderProductGrid('#new-arrivals', res.items);
+    })();
+  </script>
+  
+</body>
+</html>
+
+

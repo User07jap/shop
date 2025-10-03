@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account - ShopCo</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container flex between center" style="height:60px">
+      <a class="logo" href="/E-commerce-website-main/e-commerce website/public/index.html">ShopCo</a>
+      <div class="nav">
+        <a href="/E-commerce-website-main/e-commerce website/public/products.html">Products</a>
+        <a href="/E-commerce-website-main/e-commerce website/public/cart.html">Cart (<span id="nav-cart-count">0</span>)</a>
+      </div>
+      <div class="auth" id="nav-auth"></div>
+    </div>
+  </div>
+
+  <div class="account-wrap">
+    <div class="account-header">
+      <h2>My Dashboard</h2>
+      <button class="btn" id="btn-logout">Logout</button>
+    </div>
+
+    <div class="account-card" id="profile"></div>
+    <div class="account-card">
+      <h3>My Orders</h3>
+      <div id="orders" class="orders"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> ShopCo</p>
+    </div>
+  </div>
+
+  <script src="/js/state.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/account.js"></script>
+</body>
+</html>
+
+

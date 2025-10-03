@@ -1,0 +1,32 @@
+[
+  {
+    "id": "l1LDhA_ZLvPa56EwezV89",
+    "email": "testseller@example.com",
+    "name": "Test Seller",
+    "createdAt": "2025-09-23T07:40:44.256Z"
+  },
+  {
+    "id": "lwsXlUfpWIU2qZC1zgDxT",
+    "email": "japhet@gmail.com",
+    "name": "japhet",
+    "createdAt": "2025-09-24T23:28:37.908Z"
+  },
+  {
+    "id": "bd7e999e-7a9d-4c29-aa35-48c94e29e503",
+    "email": "seller1@gmail.com",
+    "name": "japhet",
+    "createdAt": "2025-10-03T08:43:03.177Z"
+  },
+  {
+    "id": "4e853877-9353-410c-bae1-50595ec38acf",
+    "email": "adminseller@gmail.com",
+    "name": "jan",
+    "createdAt": "2025-10-03T08:47:31.376Z"
+  },
+  {
+    "id": "16336815-d70e-4f8a-abf3-ef468e98f65f",
+    "email": "seller@gmail.com",
+    "name": "jan",
+    "createdAt": "2025-10-03T09:10:06.682Z"
+  }
+]
