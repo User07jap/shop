@@ -321,5 +321,28 @@
     "createdAt": "2025-10-03T09:12:59.158Z",
     "approvedAt": "2025-10-03T09:13:28.542Z",
     "approvedBy": "ac283559-4b2f-492b-8aa1-5dde17793840"
+  },
+  {
+    "id": "30c049d4-e198-4de2-aa84-6ac071955ec7",
+    "title": "smokey perfume",
+    "description": "perfume",
+    "price": 200,
+    "rating": 0,
+    "category": "ambot",
+    "style": "amo ni",
+    "colors": [
+      "blue",
+      "red"
+    ],
+    "sizes": [
+      "10ml",
+      "50ml"
+    ],
+    "image": "https://th.bing.com/th/id/R.ef838ef9d6d0dcbdbf2e5ddc2b8aa8dd?rik=BeXOC1da6%2bbWnA&riu=http%3a%2f%2fwww.ogbeauty.in%2fcdn%2fshop%2fcollections%2fWhatsApp_Image_2024-03-07_at_7.30.00_PM.jpg%3fv%3d1718345401&ehk=ET3zG1nVhz5%2fqcA8v4BG0i%2fbC1TG9GUlZPgGv2Wngf4%3d&risl=&pid=ImgRaw&r=0",
+    "thumbnails": [],
+    "discountPercent": 0,
+    "sellerId": "4e853877-9353-410c-bae1-50595ec38acf",
+    "status": "pending",
+    "createdAt": "2025-10-07T00:25:34.342Z"
   }
 ]

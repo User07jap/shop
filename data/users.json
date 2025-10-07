@@ -77,5 +77,13 @@
     "passwordHash": "$2a$10$wP2ZWbGm76QRTQdEvNZKcO1ML01q3e83Qa8s88Rx1978RqQRasRTm",
     "role": "seller",
     "createdAt": "2025-10-03T09:10:06.682Z"
+  },
+  {
+    "id": "55ffd962-0ee8-4842-b8a9-90523be9f6fb",
+    "name": "administrator",
+    "email": "superadmin@gmail.com",
+    "passwordHash": "$2a$10$m.ZfL9EGXhiJpMqnExx3leJskztSmSOswitjRzWRyvtCbkhGq3HSi",
+    "role": "admin",
+    "createdAt": "2025-10-07T00:46:19.167Z"
   }
 ]

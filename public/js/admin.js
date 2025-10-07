@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function checkAdminAuth() {
     const token = localStorage.getItem('token');
     if (!token) {
-        window.location.href = '/';
+        window.location.href = '/E-commerce-website-main/e-commerce%20website/public/admin/login.html';
         return;
     }
     
@@ -33,13 +33,13 @@ function checkAdminAuth() {
     .then(data => {
         if (!data.user || data.user.role !== 'admin') {
             localStorage.removeItem('token');
-            window.location.href = '/';
+            window.location.href = '/E-commerce-website-main/e-commerce%20website/public/admin/login.html';
         }
     })
     .catch(error => {
         console.error('Auth check failed:', error);
         localStorage.removeItem('token');
-        window.location.href = '/';
+        window.location.href = '/E-commerce-website-main/e-commerce%20website/public/admin/login.html';
     });
 }
 
@@ -302,7 +302,7 @@ async function confirmRejection() {
 
 function logout() {
     localStorage.removeItem('token');
-    window.location.href = '/';
+    window.location.href = '/E-commerce-website-main/e-commerce%20website/public/admin/login.html';
 }
 
 // Close modal when clicking outside

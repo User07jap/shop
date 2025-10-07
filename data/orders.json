@@ -45,5 +45,18 @@
     "total": 63,
     "address": null,
     "createdAt": "2025-10-03T09:14:16.603Z"
+  },
+  {
+    "id": "88e1f724-125d-4c1a-b390-3601173dd492",
+    "userId": "fydlS_WM4nsdvfDPqdCuX",
+    "items": [
+      {
+        "productId": "p2",
+        "qty": 1
+      }
+    ],
+    "total": 159,
+    "address": null,
+    "createdAt": "2025-10-07T00:15:13.048Z"
   }
 ]
